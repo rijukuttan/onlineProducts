@@ -1,0 +1,11 @@
+<div class="counter">
+    <div class="counter__container btn btn-info">
+      <button (click)="decrement();" class="btn btn-info counter__button" [disabled]="!countLessThenZero">
+        -
+      </button>
+      <input type="button" class="btn btn-info counter__input" [value]="counterValue">
+      <button (click)="increment();" class="btn btn-info counter__button">
+        +
+      </button>
+    </div>
+  </div>

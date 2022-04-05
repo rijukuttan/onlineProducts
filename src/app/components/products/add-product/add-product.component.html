@@ -1,0 +1,12 @@
+<form #addProductForm = "ngForm" (ngSubmit) = "onClickSubmit(addProductForm.value)" >
+    <input type = "text" name = "title" placeholder = "product title" [(ngModel)]="product.title">
+    <br/>
+    <input type = "text" name = "price" placeholder = "price" [(ngModel)]="product.price">
+    <br/>
+    <input type = "text" name = "description" placeholder = "description" [(ngModel)]="product.description">
+    <br/>
+    <input type = "text" name = "category" placeholder = "category" [(ngModel)]="product.category">
+    <br/>
+  
+    <input type = "submit" value = "submit">
+ </form>

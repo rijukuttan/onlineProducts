@@ -1,0 +1,30 @@
+<div class="card col-lg-6 mx-auto m-1 "  >
+    <div class="card-body col-lg-12">
+        <div class="row" >
+            <div class="col-lg-5">
+                <img [src]="product.image" style="height: 100%;width: 100%;">
+            </div>
+            <div class="col-lg-7">
+               
+                <div>
+                    {{product.title | uppercase}} 
+                    <i class="m-2" [ngClass] = "getClass()" (click)="showProductDetailsToggle()"></i>
+                   
+                </div>
+                <div [hidden]="ProductDetail">
+
+                    <p>{{product.price|currency:'USD'}}</p>
+                    <p>{{product.description}}</p>
+                    <p>{{product.category}}</p>
+                    <div>
+                      <app-counter></app-counter>
+                    </div>
+                  
+                </div>
+               
+                <button class="btn btn-info m-1">Edit</button>
+                <button class="btn btn-info m-1">Delete</button>
+            </div>
+        </div>
+      </div>
+    </div>
