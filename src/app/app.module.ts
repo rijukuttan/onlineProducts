@@ -20,6 +20,7 @@ import { FormsModule  } from '@angular/forms';
 
 
 import { AddProductComponent } from './components/products/add-product/add-product.component';
+import { ProductsubComponent } from './components/products/productsub/productsub.component';
 
 
 
@@ -35,6 +36,7 @@ import { AddProductComponent } from './components/products/add-product/add-produ
     CounterchildComponent,
     AddUserComponent,
     AddProductComponent,
+    ProductsubComponent,
 
   
   
