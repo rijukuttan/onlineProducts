@@ -14,7 +14,11 @@ import { CounterComponent } from './components/products/counter/counter.componen
 import { CounterchildComponent } from './components/products/counter/counterchild/counterchild.component';
 import { CustomerService } from './services/customer.service';
 import { AddUserComponent } from './components/customers/add-user/add-user.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule  } from '@angular/forms';
+
+
+
+
 import { AddProductComponent } from './components/products/add-product/add-product.component';
 
 
@@ -41,7 +45,9 @@ import { AddProductComponent } from './components/products/add-product/add-produ
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+  
+  
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]

@@ -7,6 +7,16 @@ import { Product } from './Product';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
+ // isShowAddProduct = false;
+   
+ // toggleAddProduct() {
+   // this.isShowAddProduct = !this.isShowAddProduct;
+ // }
+  isShowDivIf = false;
+  
+  toggleDisplayDivIf() {
+    this.isShowDivIf = !this.isShowDivIf;
+  }
 
   addProduct($event: any) { 
   
