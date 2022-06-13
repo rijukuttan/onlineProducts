@@ -1,0 +1,29 @@
+@import url('httpss://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  background:linear-gradient(to right, #78a7ba 0%, #4ea2c4 50%, #78a7ba 99%);
+}
+
+.logIn-form {
+  font-family: "Roboto", sans-serif;
+  width:650px;
+  margin:30px auto;
+  color:rgb(239, 245, 245);
+  background-color: #121f2c;
+  /* background:linear-gradient(to right, #78a7ba 0%, #4ea2c4 50%, #78a7ba 99%); */
+  border-radius: 10px;
+}
+
+.form-header  {
+    background-color: #060d14;
+    color:rgb(239, 245, 245);
+   
+  }
+
+.form-header h3 {
+  font-size: 25px;
+  background-color: #060d14;
+  color:rgb(239, 245, 245);
+  
+  border-bottom:1px solid #cccccc;
+}

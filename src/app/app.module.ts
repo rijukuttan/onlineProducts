@@ -13,14 +13,17 @@ import { ProductComponent } from './components/products/product/product.componen
 import { CounterComponent } from './components/products/counter/counter.component';
 import { CounterchildComponent } from './components/products/counter/counterchild/counterchild.component';
 import { CustomerService } from './services/customer.service';
-import { AddUserComponent } from './components/customers/add-user/add-user.component';
+//import { AddUserComponent } from './components/customers/add-user/add-user.component';
 import { FormsModule  } from '@angular/forms';
-
-
-
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ImgMagnifier } from "ng-img-magnifier";
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { AddProductComponent } from './components/products/add-product/add-product.component';
-import { ProductsubComponent } from './components/products/productsub/productsub.component';
+//import { ProductsubComponent } from './components/products/productsub/productsub.component';
+import { ProductChildComponent } from './components/products/product/product-child/product-child.component';
+import { RegisterFormComponent } from './components/customers/register-form/register-form.component';
+import { LoginFormComponent } from './components/customers/login-form/login-form.component';
 
 
 
@@ -34,10 +37,14 @@ import { ProductsubComponent } from './components/products/productsub/productsub
     ProductComponent,
     CounterComponent,
     CounterchildComponent,
-    AddUserComponent,
+    RegisterFormComponent,
+    //AddUserComponent,
     AddProductComponent,
-    ProductsubComponent,
-
+   // ProductsubComponent,
+    ProductChildComponent,
+   LoginFormComponent,
+ 
+   
   
   
   ],
@@ -48,6 +55,9 @@ import { ProductsubComponent } from './components/products/productsub/productsub
     MatToolbarModule,
     MatButtonModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    ImgMagnifier,NgxImageZoomModule
   
   
   ],

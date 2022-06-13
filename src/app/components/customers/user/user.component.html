@@ -1,3 +1,4 @@
+
 <div class="row">
     <div class="col-lg-3">
 
@@ -6,23 +7,29 @@
         <div class="card-body col-lg-12">
             <div class="row" >
                 <div class="col-lg-5">
-                    <img [src]="user.image">
+                    <img [src]="">
                 </div>
                 <div class="col-lg-7">
                     <div>
-                        {{user.name.firstname+ " " + user.name.lastname | uppercase}} 
+                        {{users.userName| uppercase}} 
                         <i class="m-2" [ngClass] = "getClass()" (click)="showUserDetailsToggle()"></i>
                        
                     </div>
                     <div [hidden]="userDetail">
-                        <p>{{user.username}}</p>
-                        <p>{{user.email}}</p>
-                        <p>{{user.phone}}</p>
-                        <p>{{user.address.city}}</p>
+                        <p>{{users.userName}}</p>
+                        <p>{{users.email}}</p>
+                        <!-- <p>{{user.phone}}</p> -->
+                        <p>{{users.streetAddress}}</p>
                     </div>
                     <button class="btn btn-info m-1">Invite</button>
-                    <button class="btn btn-info m-1">Edit</button>
-                    <button class="btn btn-info m-1">Delete</button>
+                    <button type="button" class="btn btn-info m-1" (click)="onEdit(this.users)" data-toggle="modal" 
+                    data-target="#userModal">
+                      Edit
+                  </button>
+                    <button type="button" (click)="deleteUser(users.id)" class="btn btn-info m-1">                   
+                        Delete
+                    </button>
+                
                 </div>
             </div>
           </div>

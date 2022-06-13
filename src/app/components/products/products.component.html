@@ -1,5 +1,5 @@
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productModal">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productModal" (click)="onAdd()">
     Add Products
   </button>
 
@@ -16,7 +16,55 @@
         
         <!-- Modal body -->
         <div class="modal-body">
-            <app-add-product (addProducts)="addProduct($event)"></app-add-product>
+          <form [formGroup]="productForm"  #addProductForm = "ngForm" (load)="addProductForm.form.reset()" 
+          >
+          <!-- <div class="form-group col-lg-12 ">
+           
+            <input type="text" id="id" name="id" class="form-control 
+            ng-untouch ng-pristine ng-invalid" (value)="id" placeholder = "id" formControlName="id"
+              required hidden >
+           
+          </div> -->
+              <div class="form-group col-lg-12 ">
+                <label for="title">Product Title</label>
+                <input type="text" id="title" name="title" class="form-control 
+                ng-untouch ng-pristine ng-invalid" placeholder = "product title" formControlName="productName"
+                 minlength="4"  required>
+               
+              </div>
+            
+              
+              <div class="form-group col-lg-12">
+                <label for="price">Product Price</label>
+                <input type="text" class="form-control" id="price" name ="productPrice" placeholder ="Price" 
+                formControlName="productPrice" required  minlength="1" > 
+              </div>
+          
+              <div class="form-group col-lg-12">
+                  <label for="productImage">Product image url</label>
+                  <input type="text" class="form-control" name = "imageUrl" 
+                  placeholder = "product Image url" formControlName="imageUrl" minlength="4" 
+                  required>
+              </div>
+              <div class="form-group col-lg-12">
+                <label for="describtion">Describtion</label>
+                <input type="text" class="form-control" name = "describtion" 
+                placeholder = "describtions" formControlName="describtion" minlength="4" 
+                required>
+            </div>
+             
+             
+              <div class="text-center" >
+                  <button type="submit" name="submit" class="btn btn-primary" 
+                  [disabled]="productForm.invalid" (click)="addProduct()" *ngIf="addMode">Add</button>
+              </div>
+              <div class="text-center" >
+                <button type="submit" name="submit" class="btn btn-primary" 
+                [disabled]="productForm.invalid" (click)="updateProduct()" *ngIf="editMode">Update</button>
+            </div>
+             
+            </form>
+            <!-- <app-add-product (addProducts)="addProduct($event)"></app-add-product> -->
         </div>
         
         <!-- Modal footer -->
@@ -28,18 +76,63 @@
     </div>
   </div>
   <div class="container-fluid">
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-lg-3">
-       <app-productsub  [product]="productItem" *ngFor="let productItem of products"></app-productsub>
-      </div>
-      <div class="col-lg-6">
-        <app-product [product]="productItem" *ngFor="let productItem of products">
+       <app-productsub  [product]="productItem" *ngFor="let productItem of productData"></app-productsub>
+      </div> -->
+      <!-- <div class="col-lg-6" >
+        <app-product [product]="productItem" *ngFor="let productItem of productData">
         </app-product>
-      </div>
-      <div class="col-lg-3">
-        <app-productsub  [product]="productItem" *ngFor="let productItem of products"></app-productsub>
-      </div>
-    </div>
+      </div> -->
+      <!-- <div class="col-lg-6" >
+        <app-product-list [product]="productItem" *ngFor="let productItem of productData">
+        </app-product-list>
+      </div> -->
+      <!-- <div class="col-lg-3">
+        <app-productsub  [product]="productItem" *ngFor="let productItem of productData"></app-productsub>
+      </div> -->
+      <table class="table table-striped" style="color:black">
+        <thead>
+            <tr>
+               <th> Product Id</th>
+               <th> Product Name</th>
+               <th> Image url</th>
+               <th> Product Price</th>
+               <th> Created Date</th>
+               <th> Modified Date</th>
+               <th> Describtions</th>
+               <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dataItem of productData">
+                <td>{{dataItem.id}}</td>
+                <td>{{dataItem.productName}}</td>
+                <td>{{dataItem.imageUrl}}</td>
+                <td>{{dataItem.productPrice}}</td>
+                <td>{{dataItem.createDate}}</td>
+                <td>{{dataItem.modifyDate}}</td>
+                <td>{{dataItem.describtion}}</td>
+                <td>
+                    <!-- <button type="button" routerLink='editProduct'
+                     class="btn btn-light mr-1"
+                     data-toggle="modal" data-target="#exampleModal" (click)="editClick(dataItem)"
+                     data-backdrop="static" data-keyboard="false">
+                        Edit
+                    </button> -->
+                    <button type="button" class="btn btn-light mr-1" (click)="onEdit(dataItem)" data-toggle="modal" 
+                    data-target="#productModal">
+                      Edit
+                  </button>
+                    <button type="button" (click)="deleteProduct(dataItem)" class="btn btn-light mr-1">                   
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- <app-product [product]="productItem" *ngFor="let productItem of productData">
+    </app-product> -->
   </div>
   
 

@@ -1,0 +1,46 @@
+<form class="logIn-form row" [formGroup]="logInForm"  #logForm = "ngForm" (load)="logForm.form.reset()" 
+>
+<div class="form-header col-lg-12 ">
+    <h3 class="text-center p-2 m-0">
+        SignUp Account</h3>
+</div>
+
+<!-- form body -->
+<div class="form-body col-lg-12">
+
+      <div class="form-group text-center
+      col-lg-12 p-4 ">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control col-lg-12
+        ng-untouch ng-pristine ng-invalid" placeholder = "Email" formControlName="email"
+         minlength="8"  required>
+       
+      </div>
+      <div class="form-group text-center
+      col-lg-12 p-4">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" class="form-control col-lg-12
+        ng-untouch ng-pristine ng-invalid" placeholder = "password" formControlName="password"
+         minlength="6"  required>
+       
+      </div>
+    
+      
+     
+     
+    
+  
+     
+    
+  
+</div>
+
+<!-- form footer -->
+<div class="form-footer col-lg-12">
+    <div class="text-center
+    col-lg-12" >
+        <button type="submit" name="submit" class="btn btn-primary col-lg-12" 
+        [disabled]="logInForm.invalid" (click)="logIn()" >log In</button>
+    </div>
+</div>
+</form>

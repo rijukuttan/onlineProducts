@@ -1,12 +1,9 @@
 export interface Product{
-    id?: number,
-    title?: string,
-    price?: number,
-    description?: string,
-    category?: string,
-    image?: string,
-    rating ?: {
-      rate?: number,
-      count?: number
-    }
+  id :number
+  productName:string
+  imageUrl:string
+  productPrice:number
+  createDate:Date
+  modifyDate:Date
+  describtion:string
 }

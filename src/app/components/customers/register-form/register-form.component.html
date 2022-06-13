@@ -1,0 +1,93 @@
+<form class="signup-form row" [formGroup]="regForm"  #addUser = "ngForm" (load)="addUser.form.reset()" 
+>
+<div class="form-header col-lg-12 ">
+    <h3 class="text-center p-2 m-0">
+        SignUp Account</h3>
+</div>
+
+<!-- form body -->
+<div class="form-body row">
+    <div class="form-group col-lg-6 ">
+        <label for="title">User Name</label>
+        <input type="text" id="userName" name="userName" class="form-control 
+        ng-untouch ng-pristine ng-invalid" placeholder = "Name" formControlName="userName"
+         minlength="4"  required>
+       
+      </div>
+      <div class="form-group col-lg-6 ">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control 
+        ng-untouch ng-pristine ng-invalid" placeholder = "Email" formControlName="email"
+         minlength="8"  required>
+       
+      </div>
+      <div class="form-group col-lg-6 ">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" class="form-control 
+        ng-untouch ng-pristine ng-invalid" placeholder = "password" formControlName="password"
+         minlength="6"  required>
+       
+      </div>
+    
+      
+      <div class="form-group col-lg-6">
+        <label for="confrimPassword">Confrim Password</label>
+        <input type="password" class="form-control" id="confrimPassword" name ="confrimPassword"
+         placeholder ="confrim Password" ng-untouch ng-pristine ng-invalid
+        formControlName="confrimPassword" required  minlength="6"/> 
+      </div>
+  
+      <div class="form-group col-lg-6">
+        <label for="phoneNumber">PhoneNumber</label>
+        <input type="text" class="form-control" id="phoneNumber" name ="phoneNumber"
+         placeholder ="phone Number" ng-untouch ng-pristine ng-invalid
+        formControlName="phoneNumber" required  minlength="10" > 
+      </div>
+      <div class="form-group col-lg-6">
+        <label for="streetAddress">StreetAddress</label>
+        <input type="text" class="form-control" id="streetAddress" name ="streetAddress"
+         placeholder ="street Address" ng-untouch ng-pristine ng-invalid
+        formControlName="streetAddress" required  minlength="6" > 
+      </div>
+      <div class="form-group col-lg-6">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" name ="city"
+         placeholder ="city" ng-untouch ng-pristine ng-invalid
+        formControlName="city" required  minlength="4" > 
+      </div>
+      <div class="form-group col-lg-6">
+        <label for="state">State</label>
+        <input type="text" class="form-control" id="state" name ="state"
+         placeholder ="state" ng-untouch ng-pristine ng-invalid
+        formControlName="state" required  minlength="3" > 
+      </div>
+  
+      <!-- <div class="form-group col-lg-12">
+          <label for="productImage">Product image url</label>
+          <input type="text" class="form-control" name = "imageUrl" 
+          placeholder = "product Image url" formControlName="imageUrl" minlength="4" 
+          required>
+      </div> -->
+      <div class="form-group col-lg-6">
+        <label for="postalCode">Postal Code</label>
+        <input type="text" class="form-control" name = "postalCode" 
+        placeholder = "postalCode" formControlName="postalCode" minlength="4" 
+        required>
+    </div>
+     
+     
+      <div class="text-center
+      col-lg-12" >
+          <button type="submit" name="submit" class="btn btn-primary col-lg-12" 
+          [disabled]="regForm.invalid" (click)="regUser()" >Sign Up</button>
+      </div>
+  
+     
+    
+  
+</div>
+
+<!-- form footer -->
+<div class="form-footer">
+</div>
+</form>

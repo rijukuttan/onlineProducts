@@ -1,4 +1,6 @@
+import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y/input-modality/input-modality-detector';
 import { Component, OnInit,Input } from '@angular/core';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-product',
@@ -7,23 +9,17 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
-@Input()product:any
-ProductDetail=false;
-showProductDetailsToggle() {
-  this.ProductDetail = !this.ProductDetail;
-}
-getClass(){
-  var classList='';
-  if(this.ProductDetail){
-     classList = 'fa fa-plus'; 
-  }else {
-      classList = 'fa fa-minus';
-  }
-  return classList;
-}
+   constructor(private api:ProductsService) { }
+   productData = {} as any;
   ngOnInit(): void {
+     
+  this.api.getproduct().subscribe((data)=>{
+    this.productData = data;
+  });
   }
+
+
+
  
  
 
